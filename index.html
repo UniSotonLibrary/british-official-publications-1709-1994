@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>British Official Publications 1709–1994 · Topics Through Time</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=39" />
+  </head>
+  <body>
+    <main id="app">
+      <section id="home-screen" class="screen is-active">
+        <header class="home-intro">
+          <h1 class="home-title">
+            <span class="home-title-line">British Official Publications 1709–1994:</span>
+            Topics Through Time
+          </h1>
+          <div class="home-copy">
+            <p>Source dataset:</p>
+            <p>
+              <a
+                href="https://datalab.library.soton.ac.uk/datasets/bopcris.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                British Official Publications,<br />
+                University of Southampton.
+              </a>
+            </p>
+            <p>Approximately 16,000 publications</p>
+            <p>covering 1709–1994.</p>
+            <p>Topics grouped into thematic</p>
+            <p>categories for exploration.</p>
+            <p>
+              Created in 2026 by
+              <a
+                href="https://library.soton.ac.uk/digital-scholarship"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Digital Scholarship</a>,
+              University of Southampton [Gil Dekel]
+            </p>
+          </div>
+        </header>
+
+        <div class="home-map" aria-label="Topic map">
+          <div class="topic-map-frame">
+          <svg id="topic-map" viewBox="0 0 980 560" role="img">
+            <defs>
+              <clipPath id="glass-frame-clip">
+                <rect x="16" y="16" width="948" height="528" />
+              </clipPath>
+            </defs>
+            <g id="topic-layer" clip-path="url(#glass-frame-clip)"></g>
+          </svg>
+          </div>
+        </div>
+
+        <p id="load-error" class="load-error" hidden></p>
+      </section>
+
+      <section id="detail-screen" class="screen" hidden>
+        <div class="topic-page">
+          <aside class="topic-left">
+            <button id="back-btn" class="back-btn" type="button">← All topics</button>
+
+            <div class="topic-identity">
+              <span id="detail-swatch" class="colour-swatch" aria-hidden="true"></span>
+              <h2 id="detail-name" class="topic-name"></h2>
+            </div>
+
+            <dl class="topic-meta">
+              <dt>Publications</dt>
+              <dd id="detail-count"></dd>
+              <dt>Date range</dt>
+              <dd><span id="detail-first-year"></span>–<span id="detail-last-year"></span></dd>
+            </dl>
+
+            <p id="detail-description" class="topic-description"></p>
+          </aside>
+
+          <div class="topic-centre">
+            <p class="panel-label">Publications through time</p>
+            <svg id="timeline-main" class="chart-svg chart-svg--main" viewBox="0 0 720 420"></svg>
+            <p id="timeline-tip" class="timeline-tip" aria-live="polite"></p>
+          </div>
+
+          <aside class="topic-right">
+            <p class="panel-label">Representative publications</p>
+            <div id="detail-publications" class="pub-cards"></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <script src="script.js?v=39"></script>
+  </body>
+</html>
